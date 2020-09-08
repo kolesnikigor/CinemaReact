@@ -1,0 +1,765 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2:300,300i,400,700,900&display=swap');
+
+$primary-color: #07080e;
+$primary-color-darken: #f0f2f5;
+$primary-color-light: #fff;
+$secondary-color: #1890ff;
+$third-color: rgb(248, 0, 95);
+$attention-color: #A60000;
+$success-color: #00CC00;
+
+$padding-big-all: 20px;
+$padding-big-top-bottom: 20px 0;
+$padding-big-left-right: 0 20px;
+$padding-medium-all: 10px;
+$padding-medium-top-bottom: 10px 0;
+$padding-medium-left-right: 0 10px;
+$padding-small-all: 5px;
+$padding-small-top-bottom: 5px 0;
+$padding-small-left-right: 0 5px;
+
+$primary-text-shadow: 0px 0 0.2px $primary-color;
+
+$primary-fz: 16px;
+$huge-fz: 26px;
+$big-fz: 23px;
+$medium-fz: 21px;
+$small-fz: 19px;
+$x-small-fz: 17px;
+$xx-small-fz: 14px;
+
+
+body {
+  margin: 0;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Exo 2', sans-serif;
+}
+
+html {
+  font-size: $primary-fz;
+}
+
+aside.ant-layout-sider {
+  background-color: $primary-color-darken;
+  color: $primary-color-light;
+}
+
+header.ant-layout-header {
+  display: flex;
+  justify-content: space-between;
+  background: $primary-color-light;
+  padding: 0;
+}
+
+main.ant-layout-content {
+  margin: 0;
+  padding: 30px 20px 100px;
+  background-color: $primary-color-light;
+}
+
+footer.ant-layout-footer {
+  margin: 0;
+  //background-color: $primary-color;
+  color: $primary-color;
+  font-size: $primary-fz;
+  //position: fixed;
+  z-index: 5;
+  bottom: 0;
+  width: 100%;
+}
+
+.ant-menu.ant-menu-dark li.ant-menu-item-selected {
+  background-color: $secondary-color;
+}
+
+.ant-menu-dark .ant-menu-item span {
+  color: $primary-color-light;
+  font-size: $primary-fz;
+}
+
+.layout .trigger {
+  font-size: $primary-fz;
+  padding: $padding-big-all;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.layout .trigger:hover {
+  color: $secondary-color;
+}
+
+.layout .logo {
+  background: $primary-color-light;
+  margin: 16px;
+}
+
+.header-logo {
+  padding: $padding-medium-left-right;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+iframe {
+  border: 1px solid $secondary-color;
+}
+
+.layout a.logo {
+  background-color: $secondary-color;
+  height: auto;
+  color: $primary-color-light;
+  padding: $padding-small-all;
+  text-align: center;
+  margin-bottom: 10px;
+  display: block;
+  cursor: pointer;
+  font-size: $xx-small-fz;
+  transition: all 0.44s;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.layout a.logo:hover {
+  font-size: $xx-small-fz;
+  background-color: $third-color;
+}
+
+nav {
+  a {
+    display: block;
+    color: $primary-color-light;
+    font-size: $xx-small-fz;
+    text-align: center;
+    width: 100%;
+    padding: $padding-big-all;
+
+    &.active {
+      background-color: $secondary-color;
+    }
+  }
+}
+
+.filter-wrapper {
+  display: flex;
+  margin-left: auto;
+  width: 60%;
+
+  & > * {
+    padding: $padding-medium-left-right;
+  }
+
+  .title {
+    font-size: $x-small-fz;
+    color: $primary-color;
+  }
+
+  div {
+    display: flex;
+    width: 100%;
+  }
+
+  div > input, div > .ant-select {
+    font-size: $xx-small-fz;
+    color: $primary-color;
+    max-width: 400px;
+    width: 100%;
+    padding: $padding-small-left-right;
+
+    &:focus {
+      border: 1px solid $secondary-color;
+    }
+
+    .ant-select-selection {
+      width: 100%;
+
+      &:focus {
+        border: 1px solid $secondary-color;
+      }
+    }
+  }
+
+}
+
+.ant-spin.ant-spin-spinning {
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+}
+
+.movie-card .movie-image {
+  height: 400px;
+}
+
+.movie-card {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > * {
+    flex-basis: 20%;
+    padding: $padding-medium-all;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.movie-card .movie-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: $medium-fz;
+  color: $primary-color;
+  margin-top: 15px;
+  transition: all 0.44s;
+  text-shadow: $primary-text-shadow;
+
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+.btn-container {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  position: relative;
+  color: $primary-color;
+  width: 100%;
+  height: auto;
+  padding: $padding-medium-all;
+  display: flex;
+  cursor: pointer;
+  span {
+    transition: all 0.3s;
+    transform: scale(1, 1);
+  }
+}
+
+.btn:hover {
+  color: $secondary-color;
+}
+
+.btn-primary {
+  border: 2px solid #000;
+  display: inline-block;
+  width: 200px;
+  height: 60px;
+  color: #000;
+  font-weight: 700;
+  line-height: 56px;
+  text-align: center;
+  border-radius: 30px;
+  font-size: 16px;
+}
+
+.btn-primary:hover::after {
+  animation-name: rotatecw;
+  animation-duration: 2s;
+}
+
+.btn-primary:hover::before {
+  animation-name: rotateccw;
+  animation-duration: 3s;
+
+}
+.btn-primary:hover::after, .btn-primary:hover::before {
+  width: 40px;
+  transform: translate(-50%, 0);
+  border: 1px solid $secondary-color;
+
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotatecw {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+@keyframes rotateccw {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(-360deg);}
+}
+
+.movie-info {
+  padding: $padding-medium-all;
+
+  .movie-title {
+    color: $primary-color;
+    font-size: $huge-fz;
+    text-align: center;
+    text-shadow: $primary-text-shadow;
+    //background-color: $secondary-color;
+    box-shadow: 4px 1px 9px 0 $secondary-color;
+  }
+
+  .movie-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -15px;
+
+    & > div {
+      font-size: $medium-fz;
+      padding: 5px 15px;
+      flex-basis: 70%;
+      //background-color: $primary-color;
+      background-clip: content-box;
+      color: $primary-color;
+
+      &:last-child > * {
+        padding: 5px 15px;
+      }
+
+      & > div {
+
+        & > .subtitle {
+          color: $secondary-color;
+          font-weight: bold;
+          font-style: italic;
+        }
+      }
+
+      & > .actors-block, & > .genre-block, & > .country-block,
+      & > .language-block, & > .age-block, & > .description-block,
+      & > .trailer-block {
+        display: flex;
+        flex-wrap: wrap;
+
+        & > .subtitle {
+          flex-basis: 23%;
+          margin: 0;
+        }
+
+        & > p {
+          flex: 1 1 77%;
+          margin: 0;
+        }
+      }
+
+      & > .btn-container {
+        margin-top: 15px;
+      }
+    }
+
+    & > div:first-child {
+      flex-basis: 30%;
+      background-color: initial;
+    }
+  }
+}
+
+.schedule {
+  padding: 40px 20px;
+
+  h2 {
+    color: $primary-color;
+    border-bottom: 1.5px solid $primary-color;
+  }
+
+  .movie-session {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px -5px;
+
+    & > div {
+
+      padding: $padding-small-left-right;
+
+      &.movie-info {
+        width: 35%;
+        display: flex;
+        justify-content: space-between;
+        color: $primary-color;
+
+        & > div {
+
+          &:first-child {
+            width: 35%;
+          }
+
+          &:last-child {
+            width: 65%;
+          }
+
+          .btn-container {
+            margin-top: 10px;
+          }
+
+          .title-block > h3 {
+            text-align: center;
+            color: $primary-color;
+            margin-top: 10px;
+          }
+        }
+      }
+
+      &:last-child {
+        width: 65%;
+        color: $primary-color;
+
+        .session-info {
+          font-size: $medium-fz;
+        }
+      }
+    }
+  }
+}
+
+.modal-wrapper {
+  position: fixed;
+  background-color: rgba(16, 21, 56 , 0.3);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modal-content {
+    width: 80%;
+    background-color: $primary-color-light;
+    border: 1px solid $secondary-color;
+    border-radius: 7px;
+    padding: $padding-medium-all;
+    text-align: center;
+    color: $primary-color;
+    position: relative;
+
+    .session-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 7px;
+      color: #fff;
+
+      div {
+        background-color: $third-color;
+        border-radius: 2px;
+      }
+
+      div:first-child {
+        background-color: $success-color;
+      }
+    }
+
+    h4 {
+      font-size: $small-fz;
+      background-color: $secondary-color;
+      color: $primary-color-light;
+    }
+  }
+}
+
+.places {
+  width: 100%;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: $xx-small-fz;
+    width: 100%;
+  }
+
+  .row-legend {
+    width: 10%;
+    padding: 2px;
+    background-color: $secondary-color;
+    border: 1px solid $primary-color;
+    border-radius: 2px;
+    color: $primary-color-light;
+    margin-bottom: 5px;
+  }
+
+  .place {
+    border: 1px solid $primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    cursor: pointer;
+    padding: 2px;
+    margin-bottom: 5px;
+    flex-grow: 1;
+    margin: 2px;
+
+    &.booked {
+      background-color: $attention-color;
+      color: $primary-color-light;
+      cursor: initial;
+    }
+
+    span {
+      padding: 5px;
+      display: block;
+    }
+  }
+}
+
+.btn-close {
+  position: absolute;
+  font-size: $medium-fz;
+  top: 7px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.btn-buy {
+  width: 50%;
+}
+
+.chosen-seats {
+  color: $primary-color-light;
+  font-size: $small-fz;
+  background-color: $third-color;
+  margin-top: 5px;
+  border-radius: 4px;
+}
+
+.form-buy {
+  display: flex;
+  flex-wrap: wrap;
+
+  label {
+    text-align: left;
+  }
+
+  .input-block {
+    width: 50%;
+    padding: $padding-small-all;
+  }
+
+  .btn-buy {
+    margin-top: 10px;
+  }
+}
+
+.success-message {
+  color: $primary-color;
+  padding: $padding-small-all;
+
+  h3 {
+    font-size: $medium-fz;
+    color: $primary-color;
+  }
+
+  p {
+    font-size: $primary-fz;
+
+  }
+}
+
+
+// Media queries ----->
+
+@media (max-width: 1200px) {
+
+  .movie-card {
+
+    & > * {
+      flex-basis: 25%;
+    }
+
+    .movie-title {
+      font-size: $x-small-fz;
+    }
+  }
+
+  .movie-info {
+
+    .movie-wrapper {
+
+      & > div {
+        font-size: $xx-small-fz;
+      }
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .movie-card {
+
+    & > * {
+      flex-basis: 33.33%;
+    }
+  }
+
+  .movie-info {
+
+    .movie-wrapper {
+      margin: 0 -5px;
+
+      & > div {
+        padding: $padding-small-all;
+
+        &:last-child > * {
+          padding: $padding-small-all;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+  .movie-card {
+
+    & > * {
+      flex-basis: 50%;
+    }
+
+    .movie-title {
+      font-size: $xx-small-fz;
+    }
+  }
+
+  .movie-info {
+    padding: $padding-medium-all;
+
+    .movie-title {
+      font-size: $medium-fz;
+    }
+
+    .movie-wrapper {
+
+      & > div {
+
+        & > .actors-block, & > .genre-block, & > .country-block,
+        & > .language-block, & > .age-block, & > .description-block,
+        & > .trailer-block {
+
+          & > .subtitle {
+            flex-basis: 100%;
+          }
+
+          & > p {
+            flex: 1 1 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .filter-wrapper {
+    width: 100%;
+  }
+
+  .schedule {
+    .movie-session {
+      flex-wrap: wrap;
+
+      & > div {
+
+        &.movie-info {
+          width: 100%;
+
+          & > div {
+
+            &:first-child {
+              width: 100%;
+            }
+
+            &:last-child {
+              width: 100%;
+            }
+
+            .btn-container {
+              margin-top: 10px;
+              margin-bottom: 10px;
+            }
+          }
+        }
+
+        &:last-child {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .movie-card {
+
+    & > * {
+      flex-basis: 100%;
+    }
+  }
+
+  .movie-info {
+    padding: $padding-medium-all;
+
+    .movie-title {
+      font-size: $x-small-fz;
+    }
+
+    .movie-wrapper {
+
+      & > div {
+        flex-basis: 100%;
+      }
+
+      & > div:first-child {
+        flex-basis: 100%;
+      }
+    }
+  }
+
+  .filter-wrapper {
+    flex-direction: column;
+
+    .title {
+      font-size: $xx-small-fz;
+    }
+
+    div {
+      flex-direction: column;
+
+      & > input {
+        margin-top: 10px;
+      }
+
+      & > div.ant-select {
+        padding: 0;
+      }
+    }
+  }
+
+  .places {
+    .row {
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    .row-legend {
+      width: 100%;
+    }
+  }
+
+  footer.ant-layout-footer {
+    position: initial;
+  }
+}
